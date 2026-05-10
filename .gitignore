@@ -1,0 +1,90 @@
+# ── Secrets & local env (never publish) ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Streamlit secrets (if you add them later)
+.streamlit/secrets.toml
+
+# ── Virtual environments ────────────────────────────────────────────────────
+.venv/
+venv/
+ENV/
+env/
+
+# ── Python bytecode & caches ────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ── Packaging / build ───────────────────────────────────────────────────────
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ── Installer / lock machine-specific paths ─────────────────────────────────
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ── Test & coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# ── Type checkers / linters ─────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# ── Jupyter ─────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── OS junk ─────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── Editors & IDEs (local user settings) ────────────────────────────────────
+.idea/
+*.swp
+*.swo
+*~
+
+# Optional: uncomment if you do not want VS Code workspace settings in the repo
+# .vscode/
+
+# ── Logs & temp ─────────────────────────────────────────────────────────────
+*.log
+logs/
+tmp/
+temp/
+*.tmp
