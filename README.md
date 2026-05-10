@@ -87,18 +87,6 @@ sequenceDiagram
 
 ---
 
-## Data flow (what each step consumes)
-
-```mermaid
-flowchart TD
-  T[User topic] --> S[Search agent output]
-  S --> R[Reader agent output]
-  S --> W[Writer]
-  R --> W
-  W --> C[Critic]
-  W --> OUT[Final report + feedback]
-  C --> OUT
-```
 
 **Implementation detail:** the reader step receives only the **first 800 characters** of search results (`app.py` / `pipeline.py`) to keep prompts bounded; the writer receives the **full** search text and full scraped content (up to tool limits).
 
@@ -123,6 +111,7 @@ flowchart TD
 - Accounts / API keys:
   - **Groq** — for `ChatGroq` (default).
   - **Tavily** — for `TAVILY_API_KEY`.
+  - **OPEN AI** — for `OPENAI_API_KEY`. (optional)
 
 ---
 
@@ -210,20 +199,6 @@ Writer and critic formats are defined in `agents.py` (`writer_prompt` / `critic_
 | Tavily errors | Missing `TAVILY_API_KEY` or quota/rate limits. |
 | Empty or poor scrape | Target site blocks bots, needs JS, or URL from search is wrong — reader relies on the model picking a URL and `requests` fetching HTML. |
 | `ModuleNotFoundError` | Run `pip install -r requirements.txt` inside the active venv. |
-
----
-
-## Security and ethics
-
-- **Do not commit** `.env` or API keys (`.gitignore` already lists `.env`).
-- Scraping is subject to site terms of service and `robots.txt`; use responsibly and prefer sources that permit access.
-- Generated reports are **not** guaranteed factual — always verify claims and citations for production or academic use.
-
----
-
-## License
-
-Add a `LICENSE` file when you publish (e.g. MIT, Apache-2.0) — this repository does not include one by default.
 
 ---
 
