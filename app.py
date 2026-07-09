@@ -503,6 +503,6 @@ if r:
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="notice">
-    ResearchMind · Powered by LangChain multi-agent pipeline · Built with Streamlit
+    ResearchMind . Made With Love By Me
 </div>
 """, unsafe_allow_html=True)
